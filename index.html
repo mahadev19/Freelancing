@@ -115,7 +115,7 @@
         Available for work
       </div>
 
-      <a class="btn btn-amber nav-cta" href="mailto:pandmahadev120@gmail.com">Start a project</a>
+      <a class="btn btn-amber nav-cta" href="#" data-open-modal>Start a project</a>
 
       <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="navLinks">
         <span></span><span></span><span></span>
@@ -148,7 +148,7 @@
 
         <div class="hero-actions" data-reveal>
           <a href="#work" class="btn btn-amber magnetic" data-magnetic>See the work →</a>
-          <a href="mailto:pandmahadev120@gmail.com" class="btn btn-ghost magnetic" data-magnetic>Start a project</a>
+          <a href="#" class="btn btn-ghost magnetic" data-magnetic data-open-modal>Start a project</a>
         </div>
       </div>
 
@@ -414,7 +414,7 @@
           <h2 id="contact-heading">Have something to build?</h2>
           <p class="sec-desc center">Tell me what you're trying to do — even a rough idea is enough to start the conversation.</p>
 
-          <a href="mailto:pandmahadev120@gmail.com" class="btn btn-amber magnetic" data-magnetic>Email me →</a>
+          <a href="#" class="btn btn-amber magnetic" data-magnetic data-open-modal>Start a project →</a>
 
           <div class="contact-meta mono">
             <a href="mailto:pandmahadev120@gmail.com">pandmahadev120@gmail.com</a>
@@ -433,6 +433,50 @@
   </footer>
 
   <!-- ============================================= -->
+  <!-- CONTACT MODAL — opened by any [data-open-modal] -->
+  <!-- Submission handled by js/contact-form.js         -->
+  <!-- ============================================= -->
+  <div class="modal-overlay" id="modalOverlay" hidden>
+    <div class="modal-panel" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+      <button class="modal-close" id="modalClose" aria-label="Close form">&times;</button>
+
+      <p class="eyebrow mono">§ START A PROJECT</p>
+      <h3 id="modalTitle">Tell me what you're building</h3>
+      <p class="modal-sub">Fill this in and it lands straight in my inbox — I usually reply within a day.</p>
+
+      <form id="contactForm" class="contact-form">
+        <!-- Replace with your own free Web3Forms access key: https://web3forms.com -->
+        <input type="hidden" name="access_key" value="YOUR_WEB3FORMS_ACCESS_KEY">
+        <input type="checkbox" name="botcheck" class="botcheck-field" tabindex="-1" autocomplete="off">
+
+        <div class="form-group">
+          <label for="fName">Name</label>
+          <input type="text" id="fName" name="name" required autocomplete="name">
+        </div>
+
+        <div class="form-group">
+          <label for="fEmail">Email</label>
+          <input type="email" id="fEmail" name="email" required autocomplete="email">
+        </div>
+
+        <div class="form-group">
+          <label for="fPhone">Phone <span class="optional">(optional)</span></label>
+          <input type="tel" id="fPhone" name="phone" autocomplete="tel">
+        </div>
+
+        <div class="form-group">
+          <label for="fMessage">A little about your project</label>
+          <textarea id="fMessage" name="message" rows="4" required></textarea>
+        </div>
+
+        <button type="submit" class="btn btn-amber form-submit" id="formSubmit">Send →</button>
+
+        <p class="form-status" id="formStatus" role="status" aria-live="polite"></p>
+      </form>
+    </div>
+  </div>
+
+  <!-- ============================================= -->
   <!-- SCRIPTS                                         -->
   <!-- GSAP + ScrollTrigger via CDN, then our modules  -->
   <!-- ============================================= -->
@@ -442,6 +486,7 @@
   <script src="js/network-canvas.js"></script>
   <script src="js/scroll-reveals.js"></script>
   <script src="js/interactions.js"></script>
+  <script src="js/contact-form.js"></script>
   <script src="js/main.js"></script>
 </body>
 </html>
