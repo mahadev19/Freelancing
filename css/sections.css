@@ -1,0 +1,233 @@
+/* ==========================================================================
+   SECTIONS
+   Layout and arrangement specific to each section of the page.
+   Component styling (cards, buttons, chips) lives in components.css.
+   ========================================================================== */
+
+/* ---------- Hero ---------- */
+
+.hero{
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-block: 140px var(--space-2xl);
+  overflow: hidden;
+}
+
+/* Canvas sits behind all hero content; network-canvas.js sizes/draws it */
+.network-canvas{
+  position: absolute;
+  inset: 0;
+  z-index: var(--z-canvas);
+  width: 100%;
+  height: 100%;
+  opacity: 0.6;
+}
+
+.hero-inner{
+  max-width: 780px;
+}
+
+.hero-title{
+  margin-top: var(--space-md);
+  max-width: 15ch;
+}
+
+.hero-lead{
+  margin-top: var(--space-md);
+  max-width: 46ch;
+  color: var(--ink-dim);
+  font-size: 1.08rem;
+}
+
+.hero-actions{
+  display: flex;
+  gap: var(--space-sm);
+  margin-top: var(--space-lg);
+  flex-wrap: wrap;
+}
+
+.hero-stats{
+  display: flex;
+  gap: var(--space-2xl);
+  margin-top: var(--space-2xl);
+  flex-wrap: wrap;
+}
+
+.scroll-cue{
+  position: absolute;
+  bottom: var(--space-lg);
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 0.68rem;
+  letter-spacing: 0.2em;
+  color: var(--ink-faint);
+}
+
+@media (max-width: 700px){
+  .hero{ padding-top: 110px; }
+  .hero-stats{ gap: var(--space-lg); }
+  .scroll-cue{ display: none; }
+}
+
+/* ---------- Services ---------- */
+
+.services-grid{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-md);
+  perspective: 1200px; /* enables tilt-card 3D effect on children */
+}
+
+.services-footnote{
+  margin-top: var(--space-lg);
+  font-size: 0.88rem;
+  color: var(--ink-faint);
+}
+
+@media (max-width: 900px){
+  .services-grid{ grid-template-columns: 1fr; }
+}
+
+/* ---------- Work ---------- */
+
+.work-list{
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+  perspective: 1200px;
+}
+
+.work-item{
+  display: grid;
+  grid-template-columns: 1fr 1.5fr;
+  gap: var(--space-lg);
+  align-items: start;
+}
+
+@media (max-width: 760px){
+  .work-item{ grid-template-columns: 1fr; }
+}
+
+/* ---------- Process ---------- */
+
+.process-grid{
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--space-md);
+}
+
+@media (max-width: 820px){
+  .process-grid{ grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 520px){
+  .process-grid{ grid-template-columns: 1fr; }
+}
+
+/* ---------- Stack ---------- */
+
+.stack-grid{
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--space-md);
+  margin-bottom: var(--space-lg);
+}
+
+.stack-col h3{
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  color: var(--accent-violet);
+  margin-bottom: var(--space-sm);
+  font-weight: 500;
+}
+
+.stack-col li{
+  font-size: 0.9rem;
+  color: var(--ink-dim);
+  padding-block: 5px;
+}
+
+.also-panel{
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+}
+
+@media (max-width: 900px){
+  .stack-grid{ grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 520px){
+  .stack-grid{ grid-template-columns: 1fr; }
+}
+
+/* ---------- Support ---------- */
+
+.support-grid{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-md);
+  perspective: 1200px;
+}
+
+.tier{
+  font-size: 0.78rem;
+  color: var(--accent-violet);
+  letter-spacing: 0.08em;
+  margin-bottom: var(--space-xs);
+}
+
+.support-note{
+  margin-top: var(--space-lg);
+  font-size: 0.88rem;
+  color: var(--ink-faint);
+}
+
+@media (max-width: 760px){
+  .support-grid{ grid-template-columns: 1fr; }
+}
+
+/* ---------- Contact ---------- */
+
+.contact-panel{
+  padding: var(--space-2xl) var(--space-lg);
+  text-align: center;
+  max-width: 640px;
+  margin: 0 auto;
+}
+
+.contact-panel h2{
+  margin-bottom: var(--space-xs);
+}
+
+.contact-meta{
+  display: flex;
+  justify-content: center;
+  gap: var(--space-lg);
+  flex-wrap: wrap;
+  margin-top: var(--space-lg);
+}
+
+.contact-meta a{
+  color: var(--ink-dim);
+  font-size: 0.85rem;
+  transition: color var(--dur-fast) var(--ease-out);
+}
+.contact-meta a:hover{
+  color: var(--accent-violet);
+}
+
+.contact-panel .btn{
+  margin-top: var(--space-sm);
+}
+
+/* ---------- Footer ---------- */
+
+.site-footer{
+  padding-block: var(--space-lg);
+  text-align: center;
+  color: var(--ink-faint);
+  font-size: 0.75rem;
+  border-top: 1px solid var(--border);
+}

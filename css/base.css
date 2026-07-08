@@ -1,0 +1,168 @@
+/* ==========================================================================
+   BASE
+   Reset, typography rendering, and layout primitives (.wrap, sections, etc).
+   No component-specific styling lives here — see components.css / sections.css
+   ========================================================================== */
+
+*, *::before, *::after{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html{
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+@media (prefers-reduced-motion: reduce){
+  html{ scroll-behavior: auto; }
+}
+
+body{
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--font-body);
+  font-size: var(--fs-body);
+  line-height: var(--lh-body);
+  overflow-x: hidden;
+  min-height: 100vh;
+}
+
+img, svg, canvas, video{
+  display: block;
+  max-width: 100%;
+}
+
+a{
+  color: inherit;
+  text-decoration: none;
+}
+
+ul, ol{
+  list-style: none;
+}
+
+button{
+  font: inherit;
+  color: inherit;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+/* ---------- Typography ---------- */
+
+h1, h2, h3, h4{
+  font-family: var(--font-display);
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  color: var(--ink);
+}
+
+h1{ font-size: var(--fs-hero); line-height: var(--lh-tight); font-weight: 700; }
+h2{ font-size: var(--fs-h2); line-height: 1.15; }
+h3{ font-size: var(--fs-h3); line-height: 1.3; }
+
+p{ color: var(--ink); }
+
+.mono{
+  font-family: var(--font-mono);
+  letter-spacing: 0.02em;
+}
+
+.accent{ color: var(--accent-amber); }
+.accent-violet{ color: var(--accent-violet); }
+
+.center{ text-align: center; }
+
+/* Reusable eyebrow label (§ 0X — SECTION) used above every section heading */
+.eyebrow{
+  font-size: var(--fs-mono);
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--accent-violet);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: var(--space-sm);
+}
+.eyebrow::before{
+  content: "";
+  width: 22px;
+  height: 1px;
+  background: var(--accent-violet);
+  display: inline-block;
+  flex-shrink: 0;
+}
+.eyebrow.center::before{ display: none; }
+
+/* ---------- Layout primitives ---------- */
+
+.wrap{
+  max-width: var(--wrap-max);
+  margin: 0 auto;
+  padding-inline: var(--wrap-pad-x);
+  position: relative;
+  z-index: var(--z-content);
+}
+
+main{
+  position: relative;
+  z-index: var(--z-content);
+}
+
+.section{
+  padding-block: var(--section-pad-y);
+  position: relative;
+}
+
+.sec-head{
+  max-width: 620px;
+  margin-bottom: var(--space-2xl);
+}
+
+.sec-desc{
+  color: var(--ink-dim);
+  margin-top: var(--space-sm);
+  font-size: 1.02rem;
+}
+
+/* Visually hidden but accessible (used for aria-only helper text if needed) */
+.visually-hidden{
+  position: absolute;
+  width: 1px; height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+
+/* Elements queued for scroll-reveal start hidden here so there is no flash
+   of fully-visible content before scroll-reveals.js attaches; JS adds
+   .is-visible to trigger the transition defined in components.css */
+[data-reveal]{
+  opacity: 0;
+  transform: translateY(24px);
+}
+[data-reveal].is-visible{
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity var(--dur-slow) var(--ease-out),
+              transform var(--dur-slow) var(--ease-out);
+}
+
+/* If JS fails to load for any reason, content must still be readable —
+   fallback after a short delay via no-js safety class set in main.js */
+.no-js [data-reveal]{
+  opacity: 1;
+  transform: none;
+}
+
+@media (prefers-reduced-motion: reduce){
+  [data-reveal]{
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}

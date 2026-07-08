@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mahadev Pandharpote — Full-Stack Developer &amp; AI Systems Builder</title>
+  <meta name="description" content="Freelance full-stack developer building web apps, backend systems, and AI agents. Based in Pune, India.">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+  <!-- Styles (component by component) -->
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/sections.css">
+</head>
+<body>
+
+  <!-- ============================================= -->
+  <!-- SCROLL PROGRESS RAIL — vertical status bar     -->
+  <!-- Populated/animated by interactions.js          -->
+  <!-- ============================================= -->
+  <aside class="rail" id="scrollRail" aria-hidden="true">
+    <div class="rail-track">
+      <div class="rail-fill" id="railFill"></div>
+    </div>
+    <div class="rail-label mono" id="railLabel">00 / HERO</div>
+  </aside>
+
+  <!-- ============================================= -->
+  <!-- NAV                                             -->
+  <!-- ============================================= -->
+  <header class="site-nav" id="siteNav">
+    <div class="wrap nav-inner">
+      <a href="#top" class="logo">MAHADEV<span class="accent">.</span>DEV</a>
+
+      <nav class="nav-links" id="navLinks" aria-label="Primary">
+        <a href="#work" data-nav-link>Work</a>
+        <a href="#services" data-nav-link>Services</a>
+        <a href="#process" data-nav-link>Process</a>
+        <a href="#stack" data-nav-link>Stack</a>
+        <a href="#support" data-nav-link>Support</a>
+        <a href="#contact" data-nav-link>Contact</a>
+      </nav>
+
+      <div class="nav-status mono" aria-label="Availability status">
+        <span class="status-dot" aria-hidden="true"></span>
+        Available for work
+      </div>
+
+      <a class="btn btn-amber nav-cta" href="mailto:pandmahadev120@gmail.com">Start a project</a>
+
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="navLinks">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <main id="top">
+
+    <!-- ============================================= -->
+    <!-- HERO — canvas node-network animation            -->
+    <!-- network-canvas.js draws into #networkCanvas     -->
+    <!-- ============================================= -->
+    <section class="hero" id="hero" aria-label="Introduction">
+      <canvas id="networkCanvas" class="network-canvas" aria-hidden="true"></canvas>
+
+      <div class="wrap hero-inner">
+        <p class="eyebrow mono" data-reveal>FULL-STACK DEVELOPER — PUNE, INDIA</p>
+
+        <h1 class="hero-title" data-reveal>
+          I build systems that <span class="accent-violet">talk to each other</span>.<br>
+          Then I ship the interface.
+        </h1>
+
+        <p class="hero-lead" data-reveal>
+          Freelance developer building custom web apps, backend systems, and
+          multi-agent AI pipelines — the kind that connect, reason, and act,
+          not just chat.
+        </p>
+
+        <div class="hero-actions" data-reveal>
+          <a href="#work" class="btn btn-amber magnetic" data-magnetic>See the work →</a>
+          <a href="mailto:pandmahadev120@gmail.com" class="btn btn-ghost magnetic" data-magnetic>Start a project</a>
+        </div>
+      </div>
+
+      <!-- Stat strip — numbers animated by interactions.js counter module -->
+      <div class="hero-stats wrap" data-reveal>
+        <div class="stat">
+          <span class="stat-num" data-counter data-target="4" data-suffix="+">0</span>
+          <span class="stat-label mono">PRODUCTION PROJECTS SHIPPED</span>
+        </div>
+        <div class="stat">
+          <span class="stat-num" data-counter data-target="4" data-suffix="-agent">0</span>
+          <span class="stat-label mono">PIPELINE, LIVE ON KAGGLE 2026</span>
+        </div>
+        <div class="stat">
+          <span class="stat-num">E2E</span>
+          <span class="stat-label mono">DATABASE TO DEPLOYED UI</span>
+        </div>
+      </div>
+
+      <div class="scroll-cue mono" aria-hidden="true">SCROLL</div>
+    </section>
+
+    <!-- ============================================= -->
+    <!-- SERVICES                                        -->
+    <!-- ============================================= -->
+    <section class="section" id="services" aria-labelledby="services-heading">
+      <div class="wrap">
+        <div class="sec-head" data-reveal>
+          <p class="eyebrow mono">§ 01 — SERVICES</p>
+          <h2 id="services-heading">Three ways I can help</h2>
+          <p class="sec-desc">What I actually deliver — picked to match what a business or founder needs, not a list of buzzwords.</p>
+        </div>
+
+        <div class="services-grid">
+          <article class="card tilt-card" data-tilt data-reveal>
+            <span class="card-tag mono">01 / WEB</span>
+            <h3>Websites &amp; Web Apps</h3>
+            <p>Business sites, internal dashboards, admin panels, booking or e-commerce flows — built clean and fast.</p>
+            <ul class="card-list">
+              <li>React / Next.js or server-rendered</li>
+              <li>FastAPI, Flask, or Node.js backends</li>
+              <li>PostgreSQL / MySQL data layer</li>
+            </ul>
+          </article>
+
+          <article class="card tilt-card" data-tilt data-reveal>
+            <span class="card-tag mono">02 / AI</span>
+            <h3>AI Agents &amp; Automation</h3>
+            <p>Chatbots and agents that connect to your actual data — lead gen, support, outreach, internal workflows.</p>
+            <ul class="card-list">
+              <li>RAG-powered assistants (ChromaDB)</li>
+              <li>Multi-agent pipelines (Google ADK, CrewAI)</li>
+              <li>Human-in-the-loop automation</li>
+            </ul>
+          </article>
+
+          <article class="card tilt-card" data-tilt data-reveal>
+            <span class="card-tag mono">03 / DATA</span>
+            <h3>Data &amp; ML Tools</h3>
+            <p>Turn raw data into decisions — prediction models, live dashboards, reporting people actually check.</p>
+            <ul class="card-list">
+              <li>Streamlit or Power BI dashboards</li>
+              <li>Predictive models &amp; risk scoring</li>
+              <li>Data cleaning &amp; pipeline automation</li>
+            </ul>
+          </article>
+        </div>
+
+        <p class="services-footnote mono" data-reveal>
+          ↳ Need something outside these three? Node.js, Express, MongoDB, TypeScript and more are fair game — just ask.
+        </p>
+      </div>
+    </section>
+
+    <!-- ============================================= -->
+    <!-- SELECTED WORK                                   -->
+    <!-- ============================================= -->
+    <section class="section" id="work" aria-labelledby="work-heading">
+      <div class="wrap">
+        <div class="sec-head" data-reveal>
+          <p class="eyebrow mono">§ 02 — SELECTED WORK</p>
+          <h2 id="work-heading">Recent builds</h2>
+          <p class="sec-desc">A few projects that show the range — from a multi-agent AI pipeline to a deployed ML API.</p>
+        </div>
+
+        <div class="work-list">
+          <article class="work-item tilt-card" data-tilt data-reveal>
+            <div class="work-item-left">
+              <span class="work-num mono">FIG. 01</span>
+              <h3>Sales Pipeline Agent</h3>
+              <div class="chip-row">
+                <span class="chip">Google ADK</span>
+                <span class="chip">FastMCP</span>
+                <span class="chip">RAG</span>
+                <span class="chip">Docker</span>
+              </div>
+              <div class="work-links">
+                <a href="https://github.com/mahadev19/sales-pipeline-agent" target="_blank" rel="noopener">GitHub ↗</a>
+                <a href="https://youtu.be/bjvdqI9NLgs" target="_blank" rel="noopener">Demo ↗</a>
+              </div>
+            </div>
+            <p class="work-desc">A 4-agent pipeline that researches companies, scores leads, and drafts personalized outreach in ~13 seconds. Standalone MCP server, long-term vector memory, prompt-injection defense, full audit logging. Built for the Kaggle AI Agents Competition 2026.</p>
+          </article>
+
+          <article class="work-item tilt-card" data-tilt data-reveal>
+            <div class="work-item-left">
+              <span class="work-num mono">FIG. 02</span>
+              <h3>Insurance Premium API</h3>
+              <div class="chip-row">
+                <span class="chip">FastAPI</span>
+                <span class="chip">Scikit-learn</span>
+                <span class="chip">Docker</span>
+                <span class="chip">AWS EC2</span>
+              </div>
+            </div>
+            <p class="work-desc">A machine learning API predicting insurance premium categories from health, lifestyle, and demographic data — engineered features, Pydantic validation, an interactive Streamlit frontend, and a full Docker → EC2 deployment pipeline.</p>
+          </article>
+
+          <article class="work-item tilt-card" data-tilt data-reveal>
+            <div class="work-item-left">
+              <span class="work-num mono">FIG. 03</span>
+              <h3>Gmail Outreach Automation</h3>
+              <div class="chip-row">
+                <span class="chip">CrewAI</span>
+                <span class="chip">Groq LLM</span>
+                <span class="chip">Supabase</span>
+                <span class="chip">A/B Testing</span>
+              </div>
+            </div>
+            <p class="work-desc">A multi-user email outreach platform sending up to 2,000 personalized emails/day — AI-generated templates, 48-hour reply/bounce detection, warm-up scheduling, and a 10-page analytics dashboard.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================= -->
+    <!-- PROCESS                                         -->
+    <!-- ============================================= -->
+    <section class="section" id="process" aria-labelledby="process-heading">
+      <div class="wrap">
+        <div class="sec-head" data-reveal>
+          <p class="eyebrow mono">§ 03 — HOW IT WORKS</p>
+          <h2 id="process-heading">A straightforward process</h2>
+          <p class="sec-desc">No surprises. You'll always know what stage the project is in.</p>
+        </div>
+
+        <ol class="process-grid">
+          <li class="process-item" data-reveal>
+            <span class="process-num">01</span>
+            <h3>Discover</h3>
+            <p>We talk through what you actually need — the outcome, not just the feature list.</p>
+          </li>
+          <li class="process-item" data-reveal>
+            <span class="process-num">02</span>
+            <h3>Build</h3>
+            <p>Staged builds with regular check-ins, so you see progress instead of waiting for a reveal.</p>
+          </li>
+          <li class="process-item" data-reveal>
+            <span class="process-num">03</span>
+            <h3>Launch</h3>
+            <p>Deployed, tested, and handed over — with documentation so it's never a black box.</p>
+          </li>
+          <li class="process-item" data-reveal>
+            <span class="process-num">04</span>
+            <h3>Support</h3>
+            <p>A free 2-week bug-fix window after launch, then ongoing support if you want it.</p>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- ============================================= -->
+    <!-- TECH STACK                                      -->
+    <!-- ============================================= -->
+    <section class="section" id="stack" aria-labelledby="stack-heading">
+      <div class="wrap">
+        <div class="sec-head" data-reveal>
+          <p class="eyebrow mono">§ 04 — TECH STACK</p>
+          <h2 id="stack-heading">What I build with</h2>
+          <p class="sec-desc">Core tools I use daily, plus a wider range I can pick up for the right project.</p>
+        </div>
+
+        <div class="stack-grid" data-reveal>
+          <div class="stack-col">
+            <h3 class="mono">Frontend</h3>
+            <ul><li>HTML / CSS / JavaScript</li><li>React (working knowledge)</li><li>Streamlit</li></ul>
+          </div>
+          <div class="stack-col">
+            <h3 class="mono">Backend &amp; APIs</h3>
+            <ul><li>FastAPI</li><li>Flask</li><li>REST API design</li><li>PostgreSQL / MySQL</li></ul>
+          </div>
+          <div class="stack-col">
+            <h3 class="mono">AI &amp; ML</h3>
+            <ul><li>Google ADK / FastMCP</li><li>ChromaDB (RAG)</li><li>CrewAI, LangChain</li><li>Scikit-learn, TensorFlow</li></ul>
+          </div>
+          <div class="stack-col">
+            <h3 class="mono">Data &amp; DevOps</h3>
+            <ul><li>Pandas, NumPy</li><li>Power BI, DAX</li><li>Docker</li><li>AWS (EC2, S3)</li></ul>
+          </div>
+        </div>
+
+        <div class="also-panel card" data-reveal>
+          <p class="eyebrow mono">ALSO AVAILABLE ON REQUEST</p>
+          <div class="chip-row">
+            <span class="chip">Node.js</span>
+            <span class="chip">Express</span>
+            <span class="chip">Next.js</span>
+            <span class="chip">TypeScript</span>
+            <span class="chip">MongoDB</span>
+            <span class="chip">Google Cloud Platform</span>
+            <span class="chip">Django</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================= -->
+    <!-- MAINTENANCE & SUPPORT                           -->
+    <!-- ============================================= -->
+    <section class="section" id="support" aria-labelledby="support-heading">
+      <div class="wrap">
+        <div class="sec-head" data-reveal>
+          <p class="eyebrow mono">§ 05 — MAINTENANCE &amp; SUPPORT</p>
+          <h2 id="support-heading">Projects don't end at launch</h2>
+          <p class="sec-desc">Software needs upkeep. Here's how ongoing support works after your project ships.</p>
+        </div>
+
+        <div class="support-grid">
+          <article class="card tilt-card" data-tilt data-reveal>
+            <p class="tier mono">BASIC RETAINER</p>
+            <h3>Keep it running</h3>
+            <ul class="card-list check-list">
+              <li>Monthly check-in &amp; health review</li>
+              <li>Security &amp; dependency updates</li>
+              <li>Small bug fixes</li>
+              <li>Email support, 48-hr response</li>
+            </ul>
+          </article>
+
+          <article class="card tilt-card" data-tilt data-reveal>
+            <p class="tier mono">GROWTH RETAINER</p>
+            <h3>Keep it improving</h3>
+            <ul class="card-list check-list">
+              <li>Everything in Basic</li>
+              <li>New feature additions each month</li>
+              <li>Performance &amp; uptime monitoring</li>
+              <li>Priority turnaround, 24-hr response</li>
+            </ul>
+          </article>
+        </div>
+
+        <p class="support-note mono" data-reveal>↳ Every project includes a free 2-week bug-fix window after launch — no retainer required for that part.</p>
+      </div>
+    </section>
+
+    <!-- ============================================= -->
+    <!-- CONTACT                                         -->
+    <!-- ============================================= -->
+    <section class="section" id="contact" aria-labelledby="contact-heading">
+      <div class="wrap">
+        <div class="contact-panel card" data-reveal>
+          <p class="eyebrow mono center">§ 06 — GET IN TOUCH</p>
+          <h2 id="contact-heading">Have something to build?</h2>
+          <p class="sec-desc center">Tell me what you're trying to do — even a rough idea is enough to start the conversation.</p>
+
+          <a href="mailto:pandmahadev120@gmail.com" class="btn btn-amber magnetic" data-magnetic>Email me →</a>
+
+          <div class="contact-meta mono">
+            <a href="mailto:pandmahadev120@gmail.com">pandmahadev120@gmail.com</a>
+            <a href="tel:+919356804873">+91 93568 04873</a>
+            <a href="https://github.com/mahadev19" target="_blank" rel="noopener">GitHub</a>
+            <a href="https://www.linkedin.com/in/mahadev-pandharpote/" target="_blank" rel="noopener">LinkedIn</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer mono">
+    <div class="wrap">MAHADEV PANDHARPOTE — PUNE, INDIA — BUILT WITHOUT A TEMPLATE</div>
+  </footer>
+
+  <!-- ============================================= -->
+  <!-- SCRIPTS                                         -->
+  <!-- GSAP + ScrollTrigger via CDN, then our modules  -->
+  <!-- ============================================= -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+
+  <script src="js/network-canvas.js"></script>
+  <script src="js/scroll-reveals.js"></script>
+  <script src="js/interactions.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

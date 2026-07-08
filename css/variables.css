@@ -1,0 +1,86 @@
+/* ==========================================================================
+   DESIGN TOKENS
+   Every color, type, spacing, and motion value the site uses lives here.
+   Nothing downstream should hardcode a raw hex/px value for these concerns.
+   ========================================================================== */
+
+:root{
+
+  /* ---------- Color: base canvas ---------- */
+  --bg:              #0A0B10;   /* near-black, cooler than pure black */
+  --bg-panel:        #11131C;   /* cards / panels */
+  --bg-panel-raised: #161926;   /* hover / raised state of panels */
+  --border:          rgba(237, 237, 242, 0.09);
+  --border-strong:   rgba(237, 237, 242, 0.16);
+
+  /* ---------- Color: text ---------- */
+  --ink:             #EDEDF2;   /* primary text */
+  --ink-dim:         #8A8D9C;   /* secondary / supporting text */
+  --ink-faint:       #52556A;   /* tertiary, disabled, fine print */
+
+  /* ---------- Color: accents (two distinct jobs) ---------- */
+  --accent-violet:      #7C6FF2;  /* "the system" — links, node network, highlights */
+  --accent-violet-dim:  rgba(124, 111, 242, 0.14);
+  --accent-violet-soft: rgba(124, 111, 242, 0.35);
+
+  --accent-amber:       #F2A65A;  /* "take action" — CTAs only */
+  --accent-amber-dim:   rgba(242, 166, 90, 0.14);
+  --accent-amber-ink:   #1A1206;  /* text color when sitting on amber */
+
+  --signal-green:       #4ADE80; /* live-status dot only, never decorative */
+
+  /* ---------- Typography ---------- */
+  --font-display: 'Space Grotesk', sans-serif;
+  --font-body:    'Inter', sans-serif;
+  --font-mono:    'JetBrains Mono', monospace;
+
+  --fs-hero:      clamp(2.4rem, 5.2vw, 4.2rem);
+  --fs-h2:        clamp(1.7rem, 3.4vw, 2.4rem);
+  --fs-h3:        1.2rem;
+  --fs-body:      1rem;
+  --fs-small:     0.875rem;
+  --fs-mono:      0.78rem;
+
+  --lh-tight:     1.08;
+  --lh-body:      1.65;
+
+  /* ---------- Spacing scale ---------- */
+  --space-xs:   8px;
+  --space-sm:   16px;
+  --space-md:   24px;
+  --space-lg:   40px;
+  --space-xl:   64px;
+  --space-2xl:  96px;
+  --space-3xl:  140px;
+
+  --section-pad-y:  var(--space-3xl);
+  --wrap-max:       1180px;
+  --wrap-pad-x:     32px;
+
+  /* ---------- Radius ---------- */
+  --radius-sm:  4px;
+  --radius-md:  10px;
+
+  /* ---------- Motion ---------- */
+  --ease-out:      cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-in-out:   cubic-bezier(0.65, 0, 0.35, 1);
+  --dur-fast:      0.2s;
+  --dur-med:       0.45s;
+  --dur-slow:      0.9s;
+
+  /* ---------- Z-index scale ---------- */
+  --z-rail:   40;
+  --z-nav:    50;
+  --z-canvas: 1;
+  --z-content: 2;
+}
+
+/* Reduced-motion users get the same tokens, animation strategy reads this
+   at the JS level (network-canvas.js / scroll-reveals.js / interactions.js) */
+@media (prefers-reduced-motion: reduce){
+  :root{
+    --dur-fast: 0.001s;
+    --dur-med:  0.001s;
+    --dur-slow: 0.001s;
+  }
+}
